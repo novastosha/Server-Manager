@@ -3,8 +3,13 @@ author: [novastosha,diniamo]
 description: THe way to manage your server
 version: 1.0
 main: main.java.ServerManager
-#commands:
-    #cmd:
-        #description:
-        #aliases:
+commands:
+    gms:
+        description: Switches your gamemode to Survival
+    gmp:
+      description: Switches your gamemode to Spectator
+    gma:
+      description: Switches your gamemode to Adventure
+    gmc:
+      description: Switches your gamemode to Creative
 #depend: [Skript]
