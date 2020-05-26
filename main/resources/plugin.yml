@@ -1,0 +1,10 @@
+name: Server Manager
+author: [novastosha,diniamo]
+description: THe way to manage your server
+version: 1.0
+main: main.java.ServerManager
+#commands:
+    #cmd:
+        #description:
+        #aliases:
+#depend: [Skript]
