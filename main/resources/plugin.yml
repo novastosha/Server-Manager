@@ -1,7 +1,7 @@
-name: Server Manager
-author: [novastosha,diniamo]
+name: Server-Manager
+author: novastosha and diniamo
 description: THe way to manage your server
-version: 1.0
+version: 0.1 IN-DEV
 main: main.java.ServerManager
 commands:
     gms:
