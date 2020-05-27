@@ -8,7 +8,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.util.StringUtil;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GamemodeCommand implements CommandExecutor, TabCompleter {
@@ -99,7 +102,25 @@ public class GamemodeCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
-        return null;
+    public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
+        if (args.length == 1) {
+            List<String> comps = new ArrayList<>(Arrays.asList("0", "1", "2", "3", "a", "s", "c", "p", "creative", "survival", "adventure", "spectator"));
+
+            StringUtil.copyPartialMatches(args[0], comps, new ArrayList<>());
+
+            return comps;
+        } else if (args.length == 0) {
+            return new ArrayList<>(Arrays.asList("0", "1", "2", "3", "a", "s", "c", "p", "creative", "survival", "adventure", "spectator"));
+        } else if (args.length == 2) {
+            List<String> comps = new ArrayList<>();
+
+            Bukkit.getOnlinePlayers().forEach((player) -> {
+                comps.add(player.getName());
+            });
+
+            return comps;
+        }
+
+        return new ArrayList<>();
     }
 }
