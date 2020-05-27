@@ -1,4 +1,6 @@
 import commands.GamemodeCommand;
+import listeners.DMListener;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ServerManager extends JavaPlugin {
@@ -10,5 +12,6 @@ public class ServerManager extends JavaPlugin {
         getCommand("gms").setExecutor(new GamemodeCommand());
         getCommand("gma").setExecutor(new GamemodeCommand());
         getCommand("gmp").setExecutor(new GamemodeCommand());
+        Bukkit.getPluginManager().registerEvents(new DMListener(),this);
     }
 }

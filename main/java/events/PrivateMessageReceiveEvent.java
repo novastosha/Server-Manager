@@ -11,9 +11,16 @@ public class PrivateMessageReceiveEvent extends Event implements Cancellable {
 
     private boolean canceled;
 
+
     private Player from;
     private Player to;
     private String message;
+
+    public PrivateMessageReceiveEvent(String message,Player from,Player to){
+        this.message = message;
+        this.to = to;
+        this.from = from;
+    }
 
     public Player getTo() {
         return to;

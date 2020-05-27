@@ -1,5 +1,7 @@
 name: Server-Manager
-author: novastosha and diniamo
+authors:
+  - novastosha
+  - diniamo
 description: THe way to manage your server
 version: 0.1 IN-DEV
 main: main.java.ServerManager
@@ -12,4 +14,11 @@ commands:
       description: Switches your gamemode to Adventure
     gmc:
       description: Switches your gamemode to Creative
+    msg:
+      description: A custom private messages
+      aliases:
+        - dm
+        - w
+        - whisper
+        - message
 #depend: [Skript]
