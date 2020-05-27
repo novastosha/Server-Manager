@@ -28,20 +28,19 @@ public class PrivateMessageCommand implements CommandExecutor {
                     }
                 }
                 if(player != null) {
-                    String message = "";
-                    for(int i = 1; i < args.length; i++){
-                        String arg = args[i] + " ";
-                        message = message + arg;
+                    StringBuilder str = new StringBuilder();
+                    for( int i = 0; i < args.length; i++ ) {
+                        str.append(args[i] + " " );
                     }
-                    if(!message.equalsIgnoreCase("")){
-                        PrivateMessageSentEvent event = new PrivateMessageSentEvent((Player) commandSender,player,message);
+                    if(!str.toString().trim().equalsIgnoreCase("")){
+                        PrivateMessageSentEvent event = new PrivateMessageSentEvent((Player) commandSender,player,str.toString().trim());
                         Bukkit.getPluginManager().callEvent(event);
                         if(!event.isCancelled()){
-                            event.getFrom().sendMessage("§bTo: "+event.getTo().getName()+ "§7 "+event.getMessage());
+                            event.getFrom().sendMessage("§bTo "+event.getTo().getName()+": "+ "§7 "+event.getMessage());
                             PrivateMessageReceiveEvent eventr = new PrivateMessageReceiveEvent(event.getMessage(),event.getFrom(),event.getTo());
                             Bukkit.getPluginManager().callEvent(eventr);
                             if(!eventr.isCancelled()){
-                                event.getTo().sendMessage("§bFrom: "+event.getTo().getName()+ "§7 "+event.getMessage());
+                                event.getTo().sendMessage("§bFrom "+event.getFrom().getName()+": "+ "§7 "+event.getMessage());
                             }
                         }
                     }else{
