@@ -20,7 +20,7 @@ public class PrivateMessageCommand implements CommandExecutor {
         }
 
         if(command.getName().equalsIgnoreCase("msg")){
-            if(args.length == 2){
+            if(args.length >= 2){
                 Player player = null;
                 for(Player playerF : Bukkit.getOnlinePlayers()){
                     if(playerF.getName().equalsIgnoreCase(args[0])){
