@@ -56,20 +56,20 @@ public class GamemodeCommand implements CommandExecutor, TabCompleter {
                     Player parsedPlayer = Bukkit.getPlayer(args[1]);
                     if (parsedPlayer != null) {
                         if (args[0].equals("1") || args[0].equalsIgnoreCase("c") || args[0].equalsIgnoreCase("creative")) {
-                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + " CREATIVE");
-                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " CREATIVE");
+                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + "CREATIVE");
+                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "CREATIVE");
                             parsedPlayer.setGameMode(GameMode.CREATIVE);
                         } else if (args[0].equals("0") || args[0].equalsIgnoreCase("s") || args[0].equalsIgnoreCase("survival")) {
-                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + " SURVIVAL");
-                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " SURVIVAL");
+                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + "SURVIVAL");
+                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "SURVIVAL");
                             parsedPlayer.setGameMode(GameMode.SURVIVAL);
                         } else if (args[0].equals("3") || args[0].equalsIgnoreCase("p") || args[0].equalsIgnoreCase("spectator")) {
-                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + " SPECTATOR");
-                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " SPECTATOR");
+                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + "SPECTATOR");
+                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "SPECTATOR");
                             parsedPlayer.setGameMode(GameMode.SPECTATOR);
                         } else if (args[0].equals("2") || args[0].equalsIgnoreCase("a") || args[0].equalsIgnoreCase("adventure")) {
-                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + " ADVENTURE");
-                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " ADVENTURE");
+                            sender.sendMessage(ChatColor.GOLD + "The player's gamemode has been succesfully changed to: " + ChatColor.GREEN + "ADVENTURE");
+                            parsedPlayer.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "ADVENTURE");
                             parsedPlayer.setGameMode(GameMode.ADVENTURE);
                         }
                     } else {
@@ -79,16 +79,16 @@ public class GamemodeCommand implements CommandExecutor, TabCompleter {
                     Player player = (Player) sender;
 
                     if (args[0].equals("1") || args[0].equalsIgnoreCase("c") || args[0].equalsIgnoreCase("creative")) {
-                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " CREATIVE");
+                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "CREATIVE");
                         player.setGameMode(GameMode.CREATIVE);
                     } else if (args[0].equals("0") || args[0].equalsIgnoreCase("s") || args[0].equalsIgnoreCase("survival")) {
-                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " SURVIVAL");
+                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "SURVIVAL");
                         player.setGameMode(GameMode.SURVIVAL);
                     } else if (args[0].equals("3") || args[0].equalsIgnoreCase("p") || args[0].equalsIgnoreCase("spectator")) {
-                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " SPECTATOR");
+                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "SPECTATOR");
                         player.setGameMode(GameMode.SPECTATOR);
                     } else if (args[0].equals("2") || args[0].equalsIgnoreCase("a") || args[0].equalsIgnoreCase("adventure")) {
-                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + " ADVENTURE");
+                        player.sendMessage(ChatColor.GOLD + "Your gamemode has been changed to: " + ChatColor.GREEN + "ADVENTURE");
                         player.setGameMode(GameMode.ADVENTURE);
                     }
                 } else {
@@ -104,13 +104,13 @@ public class GamemodeCommand implements CommandExecutor, TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String s, String[] args) {
         if (args.length == 1) {
-            List<String> comps = new ArrayList<>(Arrays.asList("0", "1", "2", "3", "a", "s", "c", "p", "creative", "survival", "adventure", "spectator"));
+            List<String> comps = new ArrayList<>(Arrays.asList("creative", "survival", "adventure", "spectator"));
 
-            StringUtil.copyPartialMatches(args[0], comps, new ArrayList<>());
+            comps = StringUtil.copyPartialMatches(args[0], comps, new ArrayList<>());
 
             return comps;
         } else if (args.length == 0) {
-            return new ArrayList<>(Arrays.asList("0", "1", "2", "3", "a", "s", "c", "p", "creative", "survival", "adventure", "spectator"));
+            return new ArrayList<>(Arrays.asList("creative", "survival", "adventure", "spectator"));
         } else if (args.length == 2) {
             List<String> comps = new ArrayList<>();
 
