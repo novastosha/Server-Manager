@@ -7,4 +7,6 @@ commands:
   gamemode:
     description: Switches your gamemode.
     aliases: [gm]
+  msg:
+    description: Custom DMs
 #depend: [Skript]
