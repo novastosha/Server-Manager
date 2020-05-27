@@ -13,5 +13,9 @@ public class ServerManager extends JavaPlugin {
         getCommand("gma").setExecutor(new GamemodeCommand());
         getCommand("gmp").setExecutor(new GamemodeCommand());
         Bukkit.getPluginManager().registerEvents(new DMListener(),this);
+        GamemodeCommand gamemodeCommand = new GamemodeCommand();
+        getCommand("gamemode").setExecutor(gamemodeCommand);
+        getCommand("gamemode").setTabCompleter(gamemodeCommand);
+
     }
 }
