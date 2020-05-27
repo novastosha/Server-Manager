@@ -1,35 +1,10 @@
 name: Server-Manager
-<<<<<<< HEAD
-authors:
-  - novastosha
-  - diniamo
-description: THe way to manage your server
-=======
 authors: [novastosha, diniamo]
 description: The way to manage your server
->>>>>>> a048e637159ba124a2b691cba61e29ac108fb271
 version: 0.1 IN-DEV
 main: ServerManager
 commands:
-<<<<<<< HEAD
-    gms:
-        description: Switches your gamemode to Survival
-    gmp:
-      description: Switches your gamemode to Spectator
-    gma:
-      description: Switches your gamemode to Adventure
-    gmc:
-      description: Switches your gamemode to Creative
-    msg:
-      description: A custom private messages
-      aliases:
-        - dm
-        - w
-        - whisper
-        - message
-=======
   gamemode:
     description: Switches your gamemode.
     aliases: [gm]
->>>>>>> a048e637159ba124a2b691cba61e29ac108fb271
 #depend: [Skript]
