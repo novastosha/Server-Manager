@@ -1,15 +1,10 @@
 name: Server-Manager
-author: novastosha and diniamo
-description: THe way to manage your server
+authors: [novastosha, diniamo]
+description: The way to manage your server
 version: 0.1 IN-DEV
-main: main.java.ServerManager
+main: ServerManager
 commands:
-    gms:
-        description: Switches your gamemode to Survival
-    gmp:
-      description: Switches your gamemode to Spectator
-    gma:
-      description: Switches your gamemode to Adventure
-    gmc:
-      description: Switches your gamemode to Creative
+  gamemode:
+    description: Switches your gamemode.
+    aliases: [gm]
 #depend: [Skript]
